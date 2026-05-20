@@ -1,1 +1,4 @@
-console.log("Hello World");
+
+function NambahUang() {
+    let uang_masuk = document.getElementById("uang-masuk");
+}
