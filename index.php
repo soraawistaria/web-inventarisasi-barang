@@ -63,7 +63,6 @@ $ambil_data = mysqli_query($koneksi, "SELECT * FROM produk");
         <!-- Tampilan Katalog -->
     <main class="katalogs">
         <?php 
-        // Perulangan akan berjalan otomatis sebanyak jumlah baris data di database
         while($row = mysqli_fetch_assoc($ambil_data)) { 
         ?>
             
