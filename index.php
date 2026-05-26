@@ -37,14 +37,14 @@ $ambil_data = mysqli_query($koneksi, "SELECT * FROM produk");
         <div class="bag-tengah">
             <div class="pp-terbaru">
                 Pemasukan terbaru
-                <div class="keg-terbaru">
-                    <p id="barang-terjual">XXXXXX</p>
+                <div class="keg-terbaru" id="div-barang-terjual">
+                    <p id="barang-terjual">Rinso cair</p>
                 </div>
             </div>
             <div class="pp-terbaru">
                 Pengeluaran terbaru
-                <div class="keg-terbaru">
-                    <p id="barang-restock">XXXXXX</p>
+                <div class="keg-terbaru" id="div-barang-restock">
+                    <p id="barang-restock">Dancow sachet</p>
                 </div>
             </div>
         </div>
