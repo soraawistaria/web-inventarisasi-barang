@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css">
+    <title align="center">Website Warung Permai</title>
+
+    <style>
+body{
+    margin: 0px;
+    background-color: rgb(0, 0, 150);
+    padding: 0px;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.header {
+    background-color: rgb(0, 0, 150);
+    position: fixed;
+    width: 100%;
+}
+.header h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bagian-atas {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+    #rekap {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(255, 225, 32);
+        height: 100px;
+        width: 30%;
+        text-align: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    #rekap:hover{
+        background-color: rgb(255, 244, 174);
+    }
+        #rekap a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+    .pem-peng {
+        height: 100px;
+        width: 35%;
+        background-color: aliceblue;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30pxs;
+    }
+    .pem-peng p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
+
+    <header class="header d-flex flex-column justify-content-center align-content-center text-center">
+        <h1 class="text-light align-content-center text-center">WARUNG PERMAI</h1>
+        <div class="container-fluid text-center p-0 m-0">
+            <div class="bagian-atas w-100 row p-0 m-0">
+                <div class="pem-peng col">
+                    <p>Pemasukan</p>
+                    <p id="uangmasuk">Rp0,-</p>
+                </div>
+                <div id="rekap" class="col">
+                    <a href="rekap.html">
+                        Rekap Penjualan
+                    </a>
+                </div>
+                <div class="pem-peng col">
+                    <p>Pengeluaran</p>
+                    <p id="uangkeluar">Rp0,-</p>
+                </div>
+            </div>
+
+            <div class="bag-tengah row">
+                <div class="pp-terbaru col">
+                    Pemasukan terbaru
+                    <div class="keg-terbaru" id="div-barang-terjual">
+                        <p id="barang-terjual">Rinso cair</p>
+                    </div>
+                </div>
+                <div class="pp-terbaru col">
+                    Pengeluaran terbaru
+                    <div class="keg-terbaru" id="div-barang-restock">
+                        <p id="barang-restock">Dancow sachet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bag-tengah2">
+                <div id="mencari">
+                    Cari produk : <input type="search" placeholder="Mie">
+                </div>
+                <div id="tmbhbrg">
+                    <a href="tambahkanbarang.php">Tambahkan barang</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<br><br>
+
+        <!-- Tampilan Katalog -->
+    <main class="katalogs">
+
+    </main>
+    <footer class="footer">
+        <div id="footer">
+            <p>Website by Amalia Soraya (2510817120002)</p>
+        </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
