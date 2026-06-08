@@ -19,7 +19,6 @@ body{
 
 .header {
     background-color: rgb(0, 0, 150);
-    position: fixed;
     width: 100%;
 }
 .header h1 {
@@ -48,7 +47,7 @@ body{
         text-decoration: none;
     }
     #rekap:hover{
-        background-color: rgb(255, 244, 174);
+        background-color: rgb(255, 247, 198);
     }
         #rekap a {
             text-decoration: none;
@@ -73,6 +72,55 @@ body{
         font-weight: bold;
         font-size: 16px;
     }
+.bag-tengah {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+    .keg-terbaru {
+        background-color: rgb(0, 0, 239);
+        color: white;
+        padding: 5px;
+        padding-right: 200px;
+        border-radius: 10px;
+    }
+
+    .pp-terbaru {
+        background-color: rgb(255, 221, 0);
+        padding: 10px;
+        padding-left: 5px;
+        padding-right: 10px;
+        border-radius: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+.bag-tengah2 { 
+    background-color: rgb(0, 0, 65);
+    display: flex;
+    padding: 0px;
+    height: auto;
+    color: aliceblue;
+}
+.footer {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+.card:hover {
+    background-color: rgb(255, 221, 0);
+}
+.btn:hover {
+    background-color: rgb(255, 232, 79);
+}
+.katalogs {
+    min-height: 480px;
+}
     </style>
 </head>
 <body>
@@ -93,6 +141,9 @@ body{
 
     <header class="header d-flex flex-column justify-content-center align-content-center text-center">
         <h1 class="text-light align-content-center text-center">WARUNG PERMAI</h1>
+    </header>
+    <br>
+    <div class="header d-flex flex-column justify-content-center align-content-center text-center">
         <div class="container-fluid text-center p-0 m-0">
             <div class="bagian-atas w-100 row p-0 m-0">
                 <div class="pem-peng col">
@@ -110,36 +161,52 @@ body{
                 </div>
             </div>
 
-            <div class="bag-tengah row">
-                <div class="pp-terbaru col">
+            <div class="bag-tengah">
+                <div class="pp-terbaru">
                     Pemasukan terbaru
                     <div class="keg-terbaru" id="div-barang-terjual">
                         <p id="barang-terjual">Rinso cair</p>
                     </div>
                 </div>
-                <div class="pp-terbaru col">
+                <div class="pp-terbaru">
                     Pengeluaran terbaru
                     <div class="keg-terbaru" id="div-barang-restock">
                         <p id="barang-restock">Dancow sachet</p>
                     </div>
                 </div>
             </div>
-            <div class="bag-tengah2">
-                <div id="mencari">
-                    Cari produk : <input type="search" placeholder="Mie">
+            <div class="bag-tengah2 row g-3 align-items-center justify-content-between px-4 py-2 m-0">
+                <div id="mencari" class="col-12 col-md-7 d-flex align-items-center py-2 m-0">
+                    <label for="searching" class="text-white text-nowrap me-2 mb-0">Cari produk : </label>
+                    <input type="search" id="searching" placeholder="Mie" class="form-control">
                 </div>
-                <div id="tmbhbrg">
-                    <a href="tambahkanbarang.php">Tambahkan barang</a>
+                <div id="tmbhbrg" class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center py-2 m-0">
+                    <button type="button" class="btn btn-warning text-nowrap w-100 m-0"><a href="tambahkanbarang.php" class="nav-link p-2">Tambahkan barang</a></button>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
-<br><br>
+<br>
 
         <!-- Tampilan Katalog -->
-    <main class="katalogs">
-
+    <main class="katalogs m-3 d-flex container-fluid">
+        <div class="card g-2 m-2" style="width: 15rem; height: min-content;">
+            <img src="../gambar/ultramilk.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Ultramilk</h5>
+                <p>Rp7.000,-</p>
+                <p>Stok: 24</p>
+            </div>
+        </div>
+        <div class="card g-2 m-2" style="width: 15rem; height: min-content;">
+            <img src="../gambar/bengbeng.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Beng-beng</h5>
+                <p>Rp3.000,-</p>
+                <p>Stok: 24</p>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div id="footer">
@@ -149,5 +216,67 @@ body{
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let totalPemasukan = 0;
+
+const tombolPemasukan = document.getElementById('uangmasuk');
+
+tombolPemasukan.addEventListener('click', function() {
+    totalPemasukan += 1000;
+    
+    tombolPemasukan.innerText = "Rp" + totalPemasukan.toLocaleString('id-ID') + ",-";
+});
+
+let totalPengeluaran = 0;
+const tombolPengeluaran = document.getElementById('uangkeluar');
+
+tombolPengeluaran.addEventListener('click', function() {
+    totalPengeluaran += 500;
+    tombolPengeluaran.innerText = "Rp" + totalPengeluaran.toLocaleString('id-ID') + ",-";
+});
+
+// 1. Definisikan list barang (Array)
+const listBarangPemasukan = ["Beng Beng", "Ultramilk", "Teh Botol", "Aqua"];
+const listBarangPengeluaran = ["Beli Indomie", "Bayar Listrik", "Isi Galon"];
+
+// 2. Buat variabel untuk mencatat indeks item yang sedang aktif
+let indeksPemasukan = 0;
+let indeksPengeluaran = 0;
+
+// 3. Ambil elemen HTML berdasarkan ID
+const elemenBarangTerjual = document.getElementById("barang-terjual");
+const elemenBarangRestock = document.getElementById("barang-restock");
+
+const boxPemasukan = document.getElementById("div-barang-terjual");
+const boxPengeluaran = document.getElementById("div-barang-restock");
+
+// 4. Tambahkan fungsi klik untuk Pemasukan
+boxPemasukan.addEventListener("click", function() {
+    // Ganti teks dengan barang sesuai indeks saat ini
+    elemenBarangTerjual.innerText = listBarangPemasukan[indeksPemasukan];
+    
+    // Naikkan indeks untuk klik berikutnya
+    indeksPemasukan++;
+    
+    // Jika indeks sudah sama dengan panjang array, reset kembali ke 0
+    if (indeksPemasukan >= listBarangPemasukan.length) {
+        indeksPemasukan = 0;
+    }
+});
+
+// 5. Tambahkan fungsi klik untuk Pengeluaran
+boxPengeluaran.addEventListener("click", function() {
+    // Ganti teks dengan barang sesuai indeks saat ini
+    elemenBarangRestock.innerText = listBarangPengeluaran[indeksPengeluaran];
+    
+    // Naikkan indeks untuk klik berikutnya
+    indeksPengeluaran++;
+    
+    // Reset ke 0 jika sudah di ujung list
+    if (indeksPengeluaran >= listBarangPengeluaran.length) {
+        indeksPengeluaran = 0;
+    }
+});
+</script>
 </body>
 </html>
